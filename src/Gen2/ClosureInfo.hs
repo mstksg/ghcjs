@@ -176,6 +176,7 @@ primTypeVt t = case repType t of
 #if __GLASGOW_HASKELL__ >= 709
     | st == pr "SmallMutableArray#"  = ArrV
     | st == pr "SmallArray#"         = ArrV
+    | st == pr "TYPE"                = PtrV -- ?
 #endif
     | st == "Data.Dynamic.Obj"       = PtrV -- ?
     | otherwise = error ("primTypeVt: unrecognized primitive type: " ++ st)
